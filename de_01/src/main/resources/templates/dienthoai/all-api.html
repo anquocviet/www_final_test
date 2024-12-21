@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Điện thoại</title>
+</head>
+<body>
+<a href="/dienthoai/all"></a>
+<table border="1">
+    <tr>
+        <th>Mã điện thoại</th>
+        <th>Tên điện thoại</th>
+        <th>Địa chỉ</th>
+        <th>Giá vốn</th>
+        <th>Loại</th>
+        <th>Nhà cung cấp</th>
+        <th>Sửa</th>
+        <th>Xóa</th>
+    </tr>
+    <tbody>
+    </tbody>
+
+    <script>
+        const tbody = document.querySelector('tbody');
+        fetch('/api/v1/dienthoai/all')
+            .then(res => res.json())
+        .then(data => {
+            data.forEach(item => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                        <td>${item.maDienThoai}</td>
+                        <td>${item.tenDienThoai}</td>
+                        <td>${item.diaChi}</td>
+                        <td>${item.giaVon}</td>
+                        <td>${item.loai}</td>
+                        <td>${item.nhaCungCap}</td>
+                        `;
+                tbody.appendChild(tr);
+            })
+        });
+
+    </script>
+</table>
+</body>
+</html>

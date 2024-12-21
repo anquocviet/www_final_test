@@ -56,4 +56,9 @@ public class DienThoaiController {
       dienThoaiService.delete(id);
       return "redirect:/dienthoai/all";
    }
+
+   @GetMapping("/api")
+   public String getApi() {
+      return "dienthoai/all-api";
+   }
 }
