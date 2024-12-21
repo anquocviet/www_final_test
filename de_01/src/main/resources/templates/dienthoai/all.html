@@ -5,7 +5,9 @@
     <title>Điện thoại</title>
 </head>
 <body>
-<a href="/dienthoai/all"></a>
+<a href="/dienthoai/add">Add dien thoai</a>
+<br>
+<br>
 <table border="1">
     <tr>
         <th>Mã điện thoại</th>
@@ -19,17 +21,17 @@
     </tr>
     <tbody>
     <tr th:each="dienthoai : ${listDienThoai}">
-        <td th:text="${dienthoai.getMaDienThoai()}"></td>
-        <td th:text="${dienthoai.getTenDienThoai()}"></td>
-        <td th:text="${dienthoai.getDiaChi()}"></td>
-        <td th:text="${dienthoai.getGiaVon()}"></td>
-        <td th:text="${dienthoai.getLoai()}"></td>
-        <td th:text="${dienthoai.getNhaCungCap()}"></td>
+        <td th:text="${dienthoai.maDienThoai}"></td>
+        <td th:text="${dienthoai.tenDienThoai}"></td>
+        <td th:text="${dienthoai.diaChi}"></td>
+        <td th:text="${dienthoai.giaVon}"></td>
+        <td th:text="${dienthoai.loai.getTenLoai}"></td>
+        <td th:text="${dienthoai.nhaCungCap}"></td>
         <td>
-            <a th:href="@{/dienthoai/edit(id=${dienthoai.getMaDienThoai()})}">Sửa</a>
+            <a th:href="@{/dienthoai/edit/{id}(id=${dienthoai.getMaDienThoai()})}">Sửa</a>
         </td>
         <td>
-            <a th:href="@{/dienthoai/delete(id=${dienthoai.getMaDienThoai()})}">Xóa</a>
+            <a th:href="@{/dienthoai/delete/{id}(id=${dienthoai.getMaDienThoai()})}">Xóa</a>
         </td>
     </tr>
     </tbody>

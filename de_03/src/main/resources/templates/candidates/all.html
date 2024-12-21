@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List candidates</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Full name</td>
+        <td>Phone</td>
+        <td>View details</td>
+    </tr>
+    <tbody>
+    <tr th:each="candidate : ${candidates}">
+        <td th:text="${candidate.id}"></td>
+        <td th:text="${candidate.fullName}"></td>
+        <td th:text="${candidate.phone}"></td>
+        <td>
+            <a th:href="@{/candidates/details/{id}(id=${candidate.id})}">Detail</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

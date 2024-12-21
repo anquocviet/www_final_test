@@ -5,6 +5,25 @@
     <title>Edit</title>
 </head>
 <body>
+<form action="/dienthoai/edit" method="post" th:object="${dienThoai}">
+    <input hidden="hidden" type="text" th:field="*{maDienThoai}">
+    <label for="tenDienThoai">Ten dien thoai</label>
+    <input type="text" id="tenDienThoai" th:field="*{tenDienThoai}">
+    <br>
+    <label for="diaChi">Dia chi</label>
+    <input type="text" id="diaChi" th:field="*{diaChi}">
+    <br>
+    <label for="giaVon">Gia von</label>
+    <input type="text" id="giaVon" th:field="*{giaVon}"/>
+    <br>
+    <label for="loai">Loai</label>
+    <input type="text" id="loai" th:field="*{loai}">
+    <br>
+    <label for="nhacungcap">Nha cung cap</label>
+    <input type="text" id="nhacungcap" th:field="*{nhaCungCap}">
+    <br>
 
+    <button type="submit">Save</button>
+</form>
 </body>
 </html>
